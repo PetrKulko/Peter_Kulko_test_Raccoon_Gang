@@ -1,0 +1,85 @@
+@media(max-width: 800px){
+    // == NAVIGATION ==
+    .navigation{
+        max-width: 200px;
+        margin: 0 auto;
+
+        &__items{
+            flex-direction: column;
+
+            &.open{
+                border: 1px solid $color-primary-400;
+                border-radius: 5px;
+            }
+
+            &.open .navigation__item{
+                display: block;
+            
+                &-link{
+                    border: none;
+                }
+            }
+
+            &.open .navigation__item.active::before{
+                content: '';
+                background: url('../img/icon_sprites.png') -10px -50px no-repeat;
+                background-size: 23px auto;
+                width: 25px;
+                height: 10px;
+                position: absolute;
+                top: 50%;
+                left: 22px;
+                cursor: pointer;
+                transform: translateY(-50%);
+            }
+        }
+
+        &__item{
+            display: none;
+            margin: 0px;
+            
+            &-link{
+                padding: 13px 0px 13px 60px;
+                border: 1px solid $color-primary-400;
+
+                &:hover{
+                    color: $color-primary-600;
+                    background-color: $color-primary-100;
+                }
+            }
+        }
+    }
+    .active{
+        display: block;
+        position: relative;
+
+        &::before{
+            content: '';
+            background: url('../img/icon_sprites.png') -53px -10px no-repeat;
+            background-size: 23px auto;
+            width: 18px;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            left: 22px;
+            cursor: pointer;
+            transform: translateY(-50%);
+        }
+    }
+    // == / NAVIGATION ==
+
+    .article{
+        &__items{
+            column-count: 1;
+            column-rule: none;
+        }
+        &__title {
+            font-size: 16px;
+            line-height: 20px;
+        }
+        &__item {
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+}
